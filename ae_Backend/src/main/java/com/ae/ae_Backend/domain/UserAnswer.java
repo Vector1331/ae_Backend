@@ -18,6 +18,12 @@ public class UserAnswer {
     private Long id;
 
     @JsonIgnore
-    @OneToOne(mappedBy = "useranswer", fetch = LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    @JsonIgnore
+    @ManyToOne(fetch = LAZY)
+    @JoinColumn(name = "storycard_id")
     private StoryCard storycard;
 }
