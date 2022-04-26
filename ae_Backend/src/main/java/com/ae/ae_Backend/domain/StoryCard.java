@@ -1,6 +1,5 @@
-package domain;
+package com.ae.ae_Backend.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 
 import javax.persistence.*;

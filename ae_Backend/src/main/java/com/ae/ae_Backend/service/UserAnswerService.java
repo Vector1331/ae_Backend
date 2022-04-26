@@ -1,10 +1,10 @@
-package service;
+package com.ae.ae_Backend.service;
 
-import domain.UserAnswer;
+import com.ae.ae_Backend.domain.UserAnswer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import repository.UserAnswerRepository;
+import com.ae.ae_Backend.repository.UserAnswerRepository;
 
 import java.util.List;
 

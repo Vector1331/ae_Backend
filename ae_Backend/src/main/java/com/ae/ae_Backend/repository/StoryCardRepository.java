@@ -1,6 +1,6 @@
-package repository;
+package com.ae.ae_Backend.repository;
 
-import domain.StoryCard;
+import com.ae.ae_Backend.domain.StoryCard;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
