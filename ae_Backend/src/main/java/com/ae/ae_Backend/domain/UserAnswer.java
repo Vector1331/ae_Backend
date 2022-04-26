@@ -1,31 +1,29 @@
-package domain;
+package com.ae.ae_Backend.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
 import static javax.persistence.FetchType.LAZY;
 
-
 @Entity
 @Getter
-public class StoryCard {
+@Setter
+public class UserAnswer {
     @Id
     @GeneratedValue
-    @Column(name = "storycard_id")
+    @Column(name = "user_answer_id")
     private Long id;
 
-    /*
     @JsonIgnore
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "user_id")
     private User user;
-     */
 
-    @OneToOne(fetch = LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_answer_id")
-    private UserAnswer useranswer;
-
-    private String question;
+    @JsonIgnore
+    @ManyToOne(fetch = LAZY)
+    @JoinColumn(name = "storycard_id")
+    private StoryCard storycard;
 }

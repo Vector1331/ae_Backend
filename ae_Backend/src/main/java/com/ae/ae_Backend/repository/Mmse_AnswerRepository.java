@@ -1,6 +1,6 @@
-package repository;
+package com.ae.ae_Backend.repository;
 
-import domain.Mmse_Answer;
+import com.ae.ae_Backend.domain.Mmse_Answer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
