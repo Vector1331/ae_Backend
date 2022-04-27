@@ -26,4 +26,14 @@ public class UserAnswer {
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "storycard_id")
     private StoryCard storycard;
+
+    private String answer;
+
+    public static UserAnswer createUserAnswer(User user, StoryCard storyCard, String answer) {
+        UserAnswer userAnswer = new UserAnswer();
+        userAnswer.setUser(user);
+        userAnswer.setStorycard(storyCard);
+        userAnswer.setAnswer(answer);
+        return userAnswer;
+    }
 }
