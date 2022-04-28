@@ -25,4 +25,8 @@ public class User {
     @JsonIgnore
     @OneToMany(mappedBy = "user")
     private List<Memory> memories = new ArrayList<>();
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "user")
+    private List<UserAnswer> userAnswers = new ArrayList<>();
 }
