@@ -1,11 +1,9 @@
-package repository;
+package com.ae.ae_Backend.repository;
 
-import domain.Diary;
+import com.ae.ae_Backend.domain.Diary;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import java.util.List;
 
 @Repository
 public class DiaryRepository {
