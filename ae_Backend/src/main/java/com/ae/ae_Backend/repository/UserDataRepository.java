@@ -1,11 +1,10 @@
-package repository;
+package com.ae.ae_Backend.repository;
 
-import domain.UserData;
+import com.ae.ae_Backend.domain.UserData;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Repository

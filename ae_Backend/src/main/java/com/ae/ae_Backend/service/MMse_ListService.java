@@ -1,9 +1,9 @@
-package service;
-import domain.Mmse_List;
+package com.ae.ae_Backend.service;
+import com.ae.ae_Backend.domain.Mmse_List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import repository.Mmse_ListRepository;
+import com.ae.ae_Backend.repository.Mmse_ListRepository;
 
 import java.util.List;
 

@@ -1,10 +1,10 @@
-package service;
+package com.ae.ae_Backend.service;
 
-import domain.StoryCard;
+import com.ae.ae_Backend.domain.StoryCard;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import repository.StoryCardRepository;
+import com.ae.ae_Backend.repository.StoryCardRepository;
 
 import java.util.List;
 
