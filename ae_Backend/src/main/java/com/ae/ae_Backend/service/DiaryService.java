@@ -1,12 +1,10 @@
-package service;
+package com.ae.ae_Backend.service;
 
-import domain.Diary;
+import com.ae.ae_Backend.domain.Diary;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import repository.DiaryRepository;
-
-import java.util.List;
+import com.ae.ae_Backend.repository.DiaryRepository;
 
 @Service
 @Transactional(readOnly = true)

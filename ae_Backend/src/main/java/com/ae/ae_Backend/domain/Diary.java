@@ -1,4 +1,4 @@
-package domain;
+package com.ae.ae_Backend.domain;
 
 import lombok.Getter;
 import lombok.Setter;
