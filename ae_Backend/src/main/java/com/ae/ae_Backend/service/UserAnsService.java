@@ -1,8 +1,8 @@
 package com.ae.ae_Backend.service;
 
-import com.ae.ae_Backend.domain.StoryCard;
+import com.ae.ae_Backend.domain.Storycard;
 import com.ae.ae_Backend.domain.User;
-import com.ae.ae_Backend.domain.UserAnswer;
+import com.ae.ae_Backend.domain.UserAns;
 import com.ae.ae_Backend.repository.StoryCardRepository;
 import com.ae.ae_Backend.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -21,11 +21,11 @@ public class UserAnswerService {
     private final UserRepository userRepository;
     private final StoryCardRepository storyCardRepository;
 
-    public List<UserAnswer> findUserAnswers() {
+    public List<UserAns> findUserAnswers() {
         return userAnswerRepository.findAll();
     }
 
-    public UserAnswer findOne(Long uaId) {
+    public UserAns findOne(Long uaId) {
         return userAnswerRepository.findOne(uaId);
     }
 
@@ -33,10 +33,10 @@ public class UserAnswerService {
     public Long answer(Long userId, Long scId, String answer) {
         // 엔티티 조회
         User user = userRepository.findOne(userId);
-        StoryCard storyCard = storyCardRepository.findOne(scId);
+        Storycard storycard = storyCardRepository.findOne(scId);
 
         // 기억상자 답변 생성
-        UserAnswer userAnswer = UserAnswer.createUserAnswer(user, storyCard, answer);
+        UserAns userAnswer = UserAns.createUserAnswer(user, storycard, answer);
 
         // 기억상자 답변 저장
         userAnswerRepository.save(userAnswer);
