@@ -8,18 +8,17 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static javax.persistence.FetchType.LAZY;
-
-@Entity
+@Entity(name = "storycard")
 @Getter
-public class StoryCard {
+@Table(name = "storycard")
+public class Storycard {
     @Id
     @Column(name = "storycard_id")
     private Long id;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "storyCard")
-    private List<UserAnswer> answers = new ArrayList<>();
+    @OneToMany(mappedBy = "storycard")
+    private List<UserAns> answers = new ArrayList<>();
 
     private String question;
 }
