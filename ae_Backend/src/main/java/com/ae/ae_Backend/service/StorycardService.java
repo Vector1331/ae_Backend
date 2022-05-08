@@ -1,24 +1,24 @@
 package com.ae.ae_Backend.service;
 
-import com.ae.ae_Backend.domain.StoryCard;
+import com.ae.ae_Backend.domain.Storycard;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import com.ae.ae_Backend.repository.StoryCardRepository;
+import com.ae.ae_Backend.repository.StorycardRepository;
 
 import java.util.List;
 
 @Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
-public class StoryCardService {
-    private final StoryCardRepository storyCardRepository;
+public class StorycardService {
+    private final StorycardRepository storyCardRepository;
 
-    public List<StoryCard> findStoryCards() {
+    public List<Storycard> findStoryCards() {
         return storyCardRepository.findAll();
     }
 
-    public StoryCard findOne(Long scId) {
+    public Storycard findOne(Long scId) {
         return storyCardRepository.findOne(scId);
     }
 }

@@ -1,6 +1,6 @@
 package com.ae.ae_Backend.repository;
 
-import com.ae.ae_Backend.domain.StoryCard;
+import com.ae.ae_Backend.domain.Storycard;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -9,11 +9,11 @@ import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
-public class StoryCardRepository {
+public class StorycardRepository {
     private final EntityManager em;
-    public void save(StoryCard card) { em.persist(card); }
-    public List<StoryCard> findAll() {
-        return em.createQuery("select sc from StoryCard sc", StoryCard.class).getResultList();
+    public void save(Storycard card) { em.persist(card); }
+    public List<Storycard> findAll() {
+        return em.createQuery("select sc from StoryCard sc", Storycard.class).getResultList();
     }
-    public StoryCard findOne(Long id) { return em.find(StoryCard.class, id); }
+    public Storycard findOne(Long id) { return em.find(Storycard.class, id); }
 }

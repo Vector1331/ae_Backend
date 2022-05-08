@@ -3,30 +3,30 @@ package com.ae.ae_Backend.service;
 import com.ae.ae_Backend.domain.Storycard;
 import com.ae.ae_Backend.domain.User;
 import com.ae.ae_Backend.domain.UserAns;
-import com.ae.ae_Backend.repository.StoryCardRepository;
+import com.ae.ae_Backend.repository.StorycardRepository;
 import com.ae.ae_Backend.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import com.ae.ae_Backend.repository.UserAnswerRepository;
+import com.ae.ae_Backend.repository.UserAnsRepository;
 
 import java.util.List;
 
 @Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
-public class UserAnswerService {
+public class UserAnsService {
 
-    private final UserAnswerRepository userAnswerRepository;
+    private final UserAnsRepository userAnsRepository;
     private final UserRepository userRepository;
-    private final StoryCardRepository storyCardRepository;
+    private final StorycardRepository storyCardRepository;
 
     public List<UserAns> findUserAnswers() {
-        return userAnswerRepository.findAll();
+        return userAnsRepository.findAll();
     }
 
     public UserAns findOne(Long uaId) {
-        return userAnswerRepository.findOne(uaId);
+        return userAnsRepository.findOne(uaId);
     }
 
     @Transactional
@@ -39,7 +39,7 @@ public class UserAnswerService {
         UserAns userAnswer = UserAns.createUserAnswer(user, storycard, answer);
 
         // 기억상자 답변 저장
-        userAnswerRepository.save(userAnswer);
+        userAnsRepository.save(userAnswer);
 
         return userAnswer.getId();
     }

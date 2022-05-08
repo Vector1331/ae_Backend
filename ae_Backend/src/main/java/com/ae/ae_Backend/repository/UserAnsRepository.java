@@ -9,11 +9,11 @@ import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
-public class UserAnswerRepository {
+public class UserAnsRepository {
     private final EntityManager em;
     public void save(UserAns answer) { em.persist(answer); }
     public List<UserAns> findAll() {
-        return em.createQuery("select ua from UserAns ua", UserAns.class).getResultList();
+        return em.createQuery("select ua from user_ans ua", UserAns.class).getResultList();
     }
     public UserAns findOne(Long id) { return em.find(UserAns.class, id); }
 }
