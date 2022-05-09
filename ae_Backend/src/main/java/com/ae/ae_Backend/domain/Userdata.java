@@ -18,7 +18,7 @@ public class Userdata {
     private String mmse_result;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_user_id")
     private User user;
 
 

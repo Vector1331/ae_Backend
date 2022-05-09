@@ -20,12 +20,12 @@ public class UserAns {
 
     @JsonIgnore
     @ManyToOne(fetch = LAZY)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_user_id")
     private User user;
 
     @JsonIgnore
     @ManyToOne(fetch = LAZY)
-    @JoinColumn(name = "storycard_id")
+    @JoinColumn(name = "storycard_storycard_id")
     private Storycard storycard;
 
     private String answer;

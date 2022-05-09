@@ -23,7 +23,7 @@ public class Memory {
     private Long memory_id;
 
     @ManyToOne(fetch = LAZY)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_user_id")
     private User user;
 
     private String title;

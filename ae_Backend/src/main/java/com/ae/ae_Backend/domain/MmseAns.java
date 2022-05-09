@@ -17,17 +17,17 @@ public class MmseAns {
     private String server_date;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_user_id")
     private User user;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "mmse_list_id")
-    private MmseList mmseList;
+    @JoinColumn(name = "mmse_list_mmse_list_id")
+    private MmseList mmse_list;
 
     public static MmseAns createMmseAnswer(User user, MmseList mmseList, String answer) {
         MmseAns mmseAnswer = new MmseAns();
         mmseAnswer.setUser(user);
-        mmseAnswer.setMmseList(mmseList);
+        mmseAnswer.setMmse_list(mmseList);
         mmseAnswer.setAnswer(answer);
 
         return mmseAnswer;

@@ -30,7 +30,7 @@ public class Diary {
     // 주 테이블에 외래키, 단방향
     // Diary 테이블을 주 테이블로 설정 (외래키가 있는 곳이 연관관계의 주인)
     @OneToOne
-    @JoinColumn(name="user_id")
+    @JoinColumn(name="user_user_id")
     private User user;
 
     /*User 엔티티에서 추가해주어야 함
