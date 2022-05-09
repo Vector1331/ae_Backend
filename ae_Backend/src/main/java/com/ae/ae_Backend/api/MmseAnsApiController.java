@@ -1,20 +1,20 @@
 package com.ae.ae_Backend.api;
 
-import com.ae.ae_Backend.domain.mmseAns;
-import com.ae.ae_Backend.service.mmseAnsService;
+import com.ae.ae_Backend.domain.MmseAns;
+import com.ae.ae_Backend.service.MmseAnsService;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
-public class mmseAnsApiController {
-    private final mmseAnsService mmseAnsService;
+public class MmseAnsApiController {
+    private final MmseAnsService mmseAnsService;
 
     @GetMapping("/api/v1/mmseAns/{id}")
-    public mmseAns getMmseAnswer(@PathVariable("id") Long id) {
+    public MmseAns getMmseAnswer(@PathVariable("id") Long id) {
 
-        mmseAns findMmseAnswer = mmseAnsService.findOne(id);
+        MmseAns findMmseAnswer = mmseAnsService.findOne(id);
         return findMmseAnswer;
 
         //예외처리 구문 추가 필요

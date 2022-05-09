@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Entity
 @Table(name ="userdata")
 @Getter @Setter
-public class userdata {
+public class Userdata {
     @Id @GeneratedValue
     @Column(name = "userdata_id")
     private Long userdata_id;

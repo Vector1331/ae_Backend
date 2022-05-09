@@ -1,6 +1,6 @@
 package com.ae.ae_Backend.repository;
 
-        import com.ae.ae_Backend.domain.mmseAns;
+        import com.ae.ae_Backend.domain.MmseAns;
         import lombok.RequiredArgsConstructor;
         import org.springframework.stereotype.Repository;
 
@@ -9,18 +9,18 @@ package com.ae.ae_Backend.repository;
 
 @Repository
 @RequiredArgsConstructor
-public class mmseAnsRepository {
+public class MmseAnsRepository {
     private EntityManager em;
 
-    public void save(mmseAns mmseAns) {
+    public void save(MmseAns mmseAns) {
         em.persist(mmseAns);
     }
 
-    public mmseAns findOne(Long id) {
-        return em.find(mmseAns.class, id);
+    public MmseAns findOne(Long id) {
+        return em.find(MmseAns.class, id);
     }
 
-    public List<mmseAns> findAll() {
-        return em.createQuery("select ma from mmse_ans ma", mmseAns.class).getResultList();
+    public List<MmseAns> findAll() {
+        return em.createQuery("select ma from mmse_ans ma", MmseAns.class).getResultList();
     }
 }

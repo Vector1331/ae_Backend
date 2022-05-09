@@ -9,7 +9,7 @@ import java.util.List;
 @Entity
 @Table(name = "mmse_list")
 @Getter @Setter
-public class mmseList {
+public class MmseList {
     @Id @GeneratedValue
     @Column(name = "mmse_list_id")
     private Long mmse_list_id;
@@ -18,7 +18,7 @@ public class mmseList {
     private String voice_q_url;
 
     @OneToMany(mappedBy = "mmse_list")
-    private List<mmseAns> mmse_ans = new ArrayList<>();
+    private List<MmseAns> mmse_ans = new ArrayList<>();
 
 
 

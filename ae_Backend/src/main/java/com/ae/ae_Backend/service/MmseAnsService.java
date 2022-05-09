@@ -1,7 +1,7 @@
 package com.ae.ae_Backend.service;
 
-import com.ae.ae_Backend.domain.mmseAns;
-import com.ae.ae_Backend.domain.mmseList;
+import com.ae.ae_Backend.domain.MmseAns;
+import com.ae.ae_Backend.domain.MmseList;
 import com.ae.ae_Backend.domain.User;
 import com.ae.ae_Backend.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -14,26 +14,26 @@ import java.util.List;
 @Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
-public class mmseAnsService {
+public class MmseAnsService {
 
-    private final mmseAnsRepository mmseAnsRepository;
+    private final MmseAnsRepository mmseAnsRepository;
     private final UserRepository userRepository;
-    private final mmseListRepository mmseListRepository;
+    private final MmseListRepository mmseListRepository;
 
-    public List<mmseAns> findmmseAnsDatas() {
+    public List<MmseAns> findmmseAnsDatas() {
         return mmseAnsRepository.findAll();
     }
 
-    public mmseAns findOne(Long mmse_ans_id) {
+    public MmseAns findOne(Long mmse_ans_id) {
         return mmseAnsRepository.findOne(mmse_ans_id);
     }
 
     @Transactional
     public Long mmseAns(Long userId, Long mmseListId, String answer) {
         User user = userRepository.findOne(userId);
-        mmseList mmseList = mmseListRepository.findOne(mmseListId);
+        MmseList mmseList = mmseListRepository.findOne(mmseListId);
 
-        mmseAns mmseAnswer = mmseAns.createMmseAnswer(user, mmseList, answer);
+        MmseAns mmseAnswer = MmseAns.createMmseAnswer(user, mmseList, answer);
 
         mmseAnsRepository.save(mmseAnswer);
         return mmseAnswer.getMmse_ans_id();

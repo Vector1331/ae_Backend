@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "mmse_ans")
 @Getter @Setter
-public class mmseAns {
+public class MmseAns {
     @Id @GeneratedValue
     @Column(name = "mmse_ans_id")
     private Long mmse_ans_id;
@@ -22,10 +22,10 @@ public class mmseAns {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "mmse_list_id")
-    private mmseList mmseList;
+    private MmseList mmseList;
 
-    public static mmseAns createMmseAnswer(User user, mmseList mmseList, String answer) {
-        mmseAns mmseAnswer = new mmseAns();
+    public static MmseAns createMmseAnswer(User user, MmseList mmseList, String answer) {
+        MmseAns mmseAnswer = new MmseAns();
         mmseAnswer.setUser(user);
         mmseAnswer.setMmseList(mmseList);
         mmseAnswer.setAnswer(answer);
