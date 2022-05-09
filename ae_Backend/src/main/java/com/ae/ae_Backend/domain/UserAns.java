@@ -8,13 +8,14 @@ import javax.persistence.*;
 
 import static javax.persistence.FetchType.LAZY;
 
-@Entity
+@Entity(name = "user_ans")
 @Getter
 @Setter
-public class UserAnswer {
+@Table(name = "user_ans")
+public class UserAns {
     @Id
     @GeneratedValue
-    @Column(name = "user_answer_id")
+    @Column(name = "user_ans_id")
     private Long id;
 
     @JsonIgnore
@@ -25,14 +26,14 @@ public class UserAnswer {
     @JsonIgnore
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "storycard_id")
-    private StoryCard storycard;
+    private Storycard storycard;
 
     private String answer;
 
-    public static UserAnswer createUserAnswer(User user, StoryCard storyCard, String answer) {
-        UserAnswer userAnswer = new UserAnswer();
+    public static UserAns createUserAnswer(User user, Storycard storycard, String answer) {
+        UserAns userAnswer = new UserAns();
         userAnswer.setUser(user);
-        userAnswer.setStorycard(storyCard);
+        userAnswer.setStorycard(storycard);
         userAnswer.setAnswer(answer);
         return userAnswer;
     }

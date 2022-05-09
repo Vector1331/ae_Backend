@@ -18,22 +18,36 @@ public class Diary {
     private String image;
 
     @Column(name="SOURCE_AUDIO_URL")
-    private String source_audio;
-
-    private String title;
+    private String sourceAudio;
 
     private String text;
 
-    private String server_date;
+    private String serverDate;
 
-    private String user_date;
+    private String userDate;
 
-    /*
-    @ManyToOne(fetch= FetchType.LAZY)
+
+    // 주 테이블에 외래키, 단방향
+    // Diary 테이블을 주 테이블로 설정 (외래키가 있는 곳이 연관관계의 주인)
+    @OneToOne
     @JoinColumn(name="USER_ID")
     private User user;
+
+    /*User 엔티티에서 추가해주어야 함
+    //이 diary 필드는 읽기 전용 필드
+    @JsonIgnore
+    @OneToOne(mappedBy= "user")
+    private Diary diary;
      */
 
+    public static Diary createDiary(User user, String image, String sourceAudio, String text) {
+        Diary diary = new Diary();
+        diary.setUser(user);
+        diary.setImage(image);
+        diary.setSourceAudio(sourceAudio);
+        diary.setText(text);
+        return diary;
+    }
 
 
 }
