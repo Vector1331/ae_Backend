@@ -5,19 +5,19 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name="DIARY")
+@Table(name="diary")
 @Getter @Setter
 public class Diary {
 
     @Id
     @GeneratedValue
-    @Column(name = "DIARY_ID")
+    @Column(name = "diary_id")
     private Long id;
 
-    @Column(name="IMAGE_URL")
+    @Column(name="image_url")
     private String image;
 
-    @Column(name="SOURCE_AUDIO_URL")
+    @Column(name="source_audio_url")
     private String sourceAudio;
 
     private String text;
@@ -30,7 +30,7 @@ public class Diary {
     // 주 테이블에 외래키, 단방향
     // Diary 테이블을 주 테이블로 설정 (외래키가 있는 곳이 연관관계의 주인)
     @OneToOne
-    @JoinColumn(name="USER_ID")
+    @JoinColumn(name="user_id")
     private User user;
 
     /*User 엔티티에서 추가해주어야 함

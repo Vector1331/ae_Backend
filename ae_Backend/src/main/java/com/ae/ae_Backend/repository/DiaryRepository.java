@@ -4,6 +4,7 @@ import com.ae.ae_Backend.domain.Diary;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
+import java.util.List;
 
 @Repository
 public class DiaryRepository {
@@ -22,10 +23,10 @@ public class DiaryRepository {
         return em.find(Diary.class, id);
     }
 
-    /*
     public List<Diary> findAll() {
         return em.createQuery("select d from Diary d", Diary.class).getResultList();
     }
-    */
+
 
 }
+
