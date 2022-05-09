@@ -1,6 +1,6 @@
 package com.ae.ae_Backend.repository;
 
-import com.ae.ae_Backend.domain.UserData;
+import com.ae.ae_Backend.domain.userdata;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -9,16 +9,16 @@ import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
-public class UserDataRepository {
+public class userdataRepository {
 
     private EntityManager em;
 
-    public UserData findOne(Long id) {
-        return em.find(UserData.class, id);
+    public userdata findOne(Long id) {
+        return em.find(userdata.class, id);
     }
 
-    public List<UserData> findAll() {
-        return em.createQuery("select u from USERDATA u",UserData.class).getResultList();
+    public List<userdata> findAll() {
+        return em.createQuery("select u from userdata ud", userdata.class).getResultList();
     }
 
 }
