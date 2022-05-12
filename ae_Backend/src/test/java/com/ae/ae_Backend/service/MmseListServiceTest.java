@@ -37,5 +37,7 @@ class MmseListServiceTest {
         MmseList cmp = mmseListRepository.findOne(mmseListId);
         //then
         assertEquals(mmseListId, result.getMmse_list_id());
+        assertEquals(mmseListId, cmp.getMmse_list_id());
+        assertEquals(result.getMmse_list_id(), cmp.getMmse_list_id());
     }
 }
