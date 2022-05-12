@@ -34,7 +34,7 @@ class UserAnsServiceTest {
         user.setName("회원 1");
         user.setGender(0);
         user.setBirth_year("1950");
-        user.setSignup_date(LocalDateTime.now());
+        user.setSignup_date(String.valueOf(LocalDateTime.now()));
         em.persist(user);
 
         //int storyCardId = (int)(Math.random() * 20) + 1;
@@ -58,7 +58,7 @@ class UserAnsServiceTest {
         user.setName("회원 1");
         user.setGender(0);
         user.setBirth_year("1950");
-        user.setSignup_date(LocalDateTime.now());
+        user.setSignup_date(String.valueOf(LocalDateTime.now()));
         em.persist(user);
 
         //int storyCardId = (int)(Math.random() * 20) + 1;

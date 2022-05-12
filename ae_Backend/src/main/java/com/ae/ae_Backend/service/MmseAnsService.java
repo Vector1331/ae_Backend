@@ -20,14 +20,7 @@ public class MmseAnsService {
     private final UserRepository userRepository;
     private final MmseListRepository mmseListRepository;
 
-    public List<MmseAns> findmmseAnsDatas() {
-        return mmseAnsRepository.findAll();
-    }
-
-    public MmseAns findOne(Long mmse_ans_id) {
-        return mmseAnsRepository.findOne(mmse_ans_id);
-    }
-
+    //
     @Transactional
     public Long mmseAns(Long userId, Long mmseListId, String answer) {
         User user = userRepository.findOne(userId);
